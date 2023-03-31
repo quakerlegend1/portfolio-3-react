@@ -1,5 +1,6 @@
 
 import styles from "./app.module.css"
+import headerLogo from "./images/header-logo.svg"
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
     <div className={styles.wrapper}>
       <header className={styles.header}>
         <div className={styles.leftSection}>
-          <img alt="header-logo" src="src\images\header-logo.svg"/>
+          <img alt="header-logo" src={headerLogo}/>
           <div>
             <h2>TASTY-BURGERS</h2>
             <p>Доставка вкусного фастфуда</p>
