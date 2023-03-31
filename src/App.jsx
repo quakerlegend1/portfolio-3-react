@@ -8,7 +8,7 @@ function App() {
     <div className={styles.wrapper}>
       <header className={styles.header}>
         <div className={styles.leftSection}>
-          <img alt="header-logo" src="..\images\header-logo.svg"/>
+          <img alt="header-logo" src="src\images\header-logo.svg"/>
           <div>
             <h2>TASTY-BURGERS</h2>
             <p>Доставка вкусного фастфуда</p>
