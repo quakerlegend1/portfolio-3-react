@@ -1,33 +1,27 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import styles from "./app.module.css"
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          click me please {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className={styles.wrapper}>
+      <header className={styles.header}>
+        <div className={styles.leftSection}>
+          <img alt="header-logo" src="src\assets\images\header-logo.svg"/>
+          <div>
+            <h2>TASTY-BURGERS</h2>
+            <p>Доставка вкусного фастфуда</p>
+          </div>
+          
+        </div>
+        <div className={styles.rightSection}>
+          <img alt="header-cart" src="src\assets\images\header-cart.svg" width="18" height="17"/>
+          <b>1300 руб.</b>
+          <img alt="header-favouriotes" src="src\assets\images\header-favouriotes.svg" width="21" height="19"/>
+          <img alt="header-user" src="src\assets\images\header-user.svg" width="20" height="20" />
+        </div>
+      </header>
     </div>
   )
 }
