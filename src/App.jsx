@@ -1,14 +1,14 @@
-import { useState } from 'react'
+
 import styles from "./app.module.css"
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <div className={styles.wrapper}>
       <header className={styles.header}>
         <div className={styles.leftSection}>
-          <img alt="header-logo" src="src\images\header-logo.svg"/>
+          <img alt="header-logo" src="src/images/header-logo.svg"/>
           <div>
             <h2>TASTY-BURGERS</h2>
             <p>Доставка вкусного фастфуда</p>
