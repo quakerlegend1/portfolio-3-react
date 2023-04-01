@@ -3,7 +3,7 @@ import styles from "./card.module.css";
 function Card() {
     return (
         <li className={styles.card}>
-            <h1>Hello</h1>
+            <img alt="favourite" src="src\images\favourite.png"/>
         </li>
     )
 }
