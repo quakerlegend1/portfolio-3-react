@@ -9,7 +9,6 @@ import headerUser from "./images/header-user.svg"
 
 function App() {
   return (
-    
     <div className={styles.wrapper}>
       <header className={styles.header}>
         <div className={styles.leftSection}>
@@ -35,7 +34,6 @@ function App() {
         </div>
         <section>
           <ul className={styles.cardsContainer}>
-          
             <li><Card/></li>
             <li><Card/></li>
             <li><Card/></li>
