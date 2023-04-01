@@ -1,6 +1,7 @@
 
 import styles from "./app.module.css"
 import Carousel from "./components/carousel/Carousel"
+import Card from "./components/card/Card"
 import headerLogo from "./images/header-logo.svg"
 import headerCart from "./images/header-cart.svg"
 import headerFavourites from "./images/header-favouriotes.svg"
@@ -34,18 +35,19 @@ function App() {
         </div>
         <section>
           <ul className={styles.cardsContainer}>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-            <li>22</li>
-            <li>31</li>
-            <li>33</li>
+          
+            <li><Card/></li>
+            <li><Card/></li>
+            <li><Card/></li>
+            <li><Card/></li>
+            <li><Card/></li>
+            <li><Card/></li>
+            <li><Card/></li>
+            <li><Card/></li>
+            <li><Card/></li>
+            <li><Card/></li>
+            <li><Card/></li>
+            <li><Card/></li>
           </ul>
         </section>
       </main>

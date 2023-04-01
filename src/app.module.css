@@ -65,5 +65,6 @@
 .cardsContainer {
     display: flex;
     flex-wrap: wrap;
-    background-color: yellow;
+    justify-content: space-between;
+    row-gap: 40px;
 }
