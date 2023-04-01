@@ -1,7 +1,7 @@
 
 import styles from "./app.module.css"
 import Carousel from "./components/carousel/Carousel"
-import Card from "./components/card/Card.jsx" 
+import Card from "./components/card/Card" 
 import headerLogo from "./images/header-logo.svg"
 import headerCart from "./images/header-cart.svg"
 import headerFavourites from "./images/header-favouriotes.svg"
