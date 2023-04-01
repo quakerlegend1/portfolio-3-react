@@ -34,4 +34,36 @@
 
 .rightSection b {
     font-size: 14px;
+    
+}
+
+.main {
+    margin: 0 auto;
+    width: 970px;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.search input {
+    width: 250px;
+    height: 45px;
+    padding: 15px 15px 15px 40px;
+    outline: 0;
+    border-radius: 10px;
+    border: 1px solid #F3F3F3;
+    background-image: url("./images/search.svg");
+    background-repeat: no-repeat;
+    background-position: 8px;
+    font-size: 18px;
+    
+}
+
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: yellow;
 }
