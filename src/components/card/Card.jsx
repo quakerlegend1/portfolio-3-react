@@ -1,8 +1,8 @@
-import styles from "./card.module.css"
+import styless from "./card.module.css"
 
 function Card() {
     return (
-        <div className={styles.card}>
+        <div className={styless.card}>
             <h1>Hello</h1>
         </div>
     )
