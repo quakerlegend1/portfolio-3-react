@@ -4,4 +4,28 @@
     border-radius: 20px;
     /* box-shadow: 0 10px 20px #00000015; */
     border: 1px solid #F3F3F3;
+    
+}
+
+.favourite {
+    cursor: pointer;
+}
+
+.plusBtn {
+    cursor: pointer;
+    background-image: url("../../images/plus.png");
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.plusBtn:hover {
+    box-shadow: 0 0 6px gray;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
 }

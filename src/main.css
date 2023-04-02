@@ -12,3 +12,15 @@ body {
 ul {
     list-style-type: none;
 }
+
+input {
+    outline: 0;
+}
+
+button {
+    border: 0;
+}
+
+img {
+    display: block;
+}
