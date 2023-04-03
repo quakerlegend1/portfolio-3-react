@@ -1,5 +1,5 @@
 import styles from "./card.module.css";
-import favourite from "../../images/favourite.png"
+import favourite from "/images/favourite.png"
 
 
 function Card(props) {

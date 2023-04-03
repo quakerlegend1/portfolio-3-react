@@ -1,5 +1,5 @@
 import styles from "./carousel.module.css"
-import carousel from "../../images/carousel-1.png"
+import carousel from "/images/carousel-1.png"
 
 function Carousel() {
     return (
