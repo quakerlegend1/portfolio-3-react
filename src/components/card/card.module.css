@@ -25,10 +25,24 @@
     cursor: pointer;
     background-image: url("/images/plus.png");
     background-size: contain;
+    background-repeat: no-repeat;
     width: 32px;
     height: 32px;
     background-color: white;
     border-radius: 20px;
+}
+
+.tickMark {
+    cursor: pointer;
+    background-image: url("/images/Tick_Mark.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(22, 22, 22, 0.295);
 }
 
 .plusBtn:hover {

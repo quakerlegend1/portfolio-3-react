@@ -1,8 +1,13 @@
+import { useState } from "react";
 import styles from "./card.module.css";
 import favourite from "/images/favourite.png"
 
 
 function Card(props) {
+    const [isAdded, setIsAdded] = useState(false)
+    function OnClickPlus() {
+        setIsAdded(!isAdded)
+    }
     return (
         <li className={styles.card}>
             <img alt="favourite" src={favourite} className={styles.favourite}/>
@@ -13,7 +18,7 @@ function Card(props) {
                     <span>Цена: </span>
                     <b>от {props.price} руб.</b>
                 </div>
-                <button className={styles.plusBtn}/>
+                <button className={isAdded ? styles.tickMark : styles.plusBtn} onClick={OnClickPlus}/>
             </div>
         </li>
     )
