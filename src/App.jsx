@@ -6,13 +6,13 @@ import headerLogo from "./images/header-logo.svg"
 import headerCart from "./images/header-cart.svg"
 import headerFavourites from "./images/header-favouriotes.svg"
 import headerUser from "./images/header-user.svg"
-import cc from "./images/1_fresh_muffin.png"
+
 
 const cardsArray = [
   { id: 1,
     title: "Фреш Маффин",
     price: 189,
-    imageUrl: cc
+    imageUrl: "/1_fresh_muffin.png"
     },
     { id: 2,
     title: "Биг Спейшил",
