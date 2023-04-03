@@ -16,17 +16,17 @@ const cardsArray = [
     },
     { id: 2,
     title: "Биг Спейшил",
-    price: 189,
+    price: 325,
     imageUrl: "/images/2_big_special_rost.png"
     },
     { id: 3,
     title: "Сырный Ролл",
-    price: 189,
+    price: 210,
     imageUrl: "/images/3_surnii_roll.png"
     },
     { id: 4,
     title: "Биг Хит",
-    price: 189,
+    price: 165,
     imageUrl: "/images/4_bighit.png"
     },
     { id: 5,
