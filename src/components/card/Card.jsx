@@ -16,7 +16,7 @@ function Card(props) {
             <div style={{display:"flex",justifyContent:"space-around",marginTop:"15px"}}>
                 <div className={styles.price}>
                     <span>Цена: </span>
-                    <b>от {props.price} руб.</b>
+                    <b>{props.price} руб.</b>
                 </div>
                 <button className={isAdded ? styles.tickMark : styles.plusBtn} onClick={OnClickPlus}/>
             </div>

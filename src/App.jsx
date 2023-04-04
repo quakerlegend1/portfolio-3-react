@@ -2,6 +2,7 @@
 import styles from "./app.module.css"
 import Carousel from "./components/carousel/Carousel"
 import Card from "./components/card/Card" 
+import Drawer from "./components/drawer/Drawer"
 import headerLogo from "/images/header-logo.svg"
 import headerCart from "/images/header-cart.svg"
 import headerFavourites from "/images/header-favouriotes.svg"
@@ -73,7 +74,10 @@ const cardsArray = [
 function App() {
   
   return (
+    <>
+    
     <div className={styles.wrapper}>
+      <Drawer/>
       <header className={styles.header}>
         <div className={styles.leftSection}>
           <img alt="header-logo" src={headerLogo}/>
@@ -84,8 +88,10 @@ function App() {
           
         </div>
         <div className={styles.rightSection}>
-          <img alt="header-cart" src={headerCart} width="18" height="17"/>
-          <b>1300 руб.</b>
+          <div className={styles.cartBtn}>
+            <img alt="header-cart" src={headerCart} width="18" height="17"/>
+            <b>1300 руб.</b>
+          </div>
           <img alt="header-favouriotes" src={headerFavourites} width="21" height="19"/>
           <img alt="header-user" src={headerUser} width="20" height="20" />
         </div>
@@ -98,12 +104,12 @@ function App() {
         </div>
         <section>
           <ul className={styles.cardsContainer}>
-            {cardsArray.map((card)=>{return <Card title={card.title} price={card.price} imageUrl={card.imageUrl}/>})}
+            {cardsArray.map((card)=>{return <Card key={card.id} title={card.title} price={card.price} imageUrl={card.imageUrl}/>})}
           </ul>
         </section>
       </main>
     </div>
-   
+    </>
   )
 }
 
