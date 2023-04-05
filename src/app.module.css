@@ -73,4 +73,5 @@
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 40px;
+    padding-bottom: 40px;
 }
