@@ -7,6 +7,8 @@ import headerLogo from "/images/header-logo.svg"
 import headerCart from "/images/header-cart.svg"
 import headerFavourites from "/images/header-favouriotes.svg"
 import headerUser from "/images/header-user.svg"
+import { useState } from "react"
+
 
 
 const cardsArray = [
@@ -72,12 +74,11 @@ const cardsArray = [
     }
 ]
 function App() {
-  
+  const [isDrawerVisible, setIsDrawerVisible] = useState(false)
   return (
     <>
-    
     <div className={styles.wrapper}>
-      <Drawer/>
+      {isDrawerVisible && <Drawer onClose={()=>{setIsDrawerVisible(false)}}/>}
       <header className={styles.header}>
         <div className={styles.leftSection}>
           <img alt="header-logo" src={headerLogo}/>
@@ -88,7 +89,7 @@ function App() {
           
         </div>
         <div className={styles.rightSection}>
-          <div className={styles.cartBtn}>
+          <div className={styles.cartBtn} onClick={()=>setIsDrawerVisible(true)}>
             <img alt="header-cart" src={headerCart} width="18" height="17"/>
             <b>1300 руб.</b>
           </div>
