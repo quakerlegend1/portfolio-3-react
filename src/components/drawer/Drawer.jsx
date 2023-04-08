@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./drawer.module.css";
-
+import CardOncart from "..//cardOncart/cardOncart.jsx"
 
  function Drawer(props) {
    
@@ -12,6 +12,7 @@ import styles from "./drawer.module.css";
                     <img className={styles.closeBtn} alt="closeBtn" src="../../../images/close.png" onClick={props.closeDrawer}/>
                 </h2>
             </div>
+            <CardOncart/>
         </div>
     )
 }
