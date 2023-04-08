@@ -6,10 +6,10 @@ import styles from "./drawer.module.css";
    
    
     return (
-        <div className={styles.overlay}>
+        <div className={`${styles.overlay} ${props.isDrawerOpened ? styles.overlayVisible : ""}`}>
             <div className={styles.drawer}>
                 <h2 style={{display:"flex",justifyContent:"space-between"}}>Корзина
-                    <img alt="closeBtn" src="../../../images/close.png" onClick={props.onClose}/>
+                    <img className={styles.closeBtn} alt="closeBtn" src="../../../images/close.png" onClick={props.closeDrawer}/>
                 </h2>
             </div>
         </div>

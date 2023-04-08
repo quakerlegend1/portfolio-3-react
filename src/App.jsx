@@ -78,7 +78,8 @@ function App() {
   return (
     <>
     <div className={styles.wrapper}>
-      {isDrawerVisible && <Drawer onClose={()=>{setIsDrawerVisible(false)}}/>}
+      {/* {isDrawerVisible && <Drawer onClose={()=>{setIsDrawerVisible(false)}}/>} */}
+      <Drawer isDrawerOpened={isDrawerVisible} closeDrawer={()=>setIsDrawerVisible(false)}/>
       <header className={styles.header}>
         <div className={styles.leftSection}>
           <img alt="header-logo" src={headerLogo}/>
