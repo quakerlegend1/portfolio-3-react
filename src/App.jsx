@@ -81,7 +81,6 @@ function App() {
       <Drawer 
         isDrawerOpened={isDrawerVisible}
         closeDrawer={()=>setIsDrawerVisible(false)}
-
       />
       <header className={styles.header}>
         <div className={styles.leftSection}>

@@ -43,3 +43,54 @@
     border-radius: 10px;
     cursor: pointer;
 }
+
+.totalBlock {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.totalBlock ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.totalBlock li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dottedLine {
+    height: 1px;
+    width: 167px;
+    border-bottom: 1px dashed #dfdfdf;
+    align-self: center;
+}
+
+.totalBlock button {
+    position: relative;
+    background-color: #9DD458;
+    border-radius: 25px;
+    height: 55px;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+.totalBlock button:hover {
+    background-color: #9cd458ce;
+}
+
+.totalBlock button:hover img {
+    transform: translateX(5px);
+}
+
+.totalBlock button > img {
+    position: absolute;
+    right: 30px;
+    top: 21px;
+    transition: transform 0.15s ease-in-out;
+}
+

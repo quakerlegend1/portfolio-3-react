@@ -19,6 +19,14 @@
 
 .favourite {
     cursor: pointer;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.favourite:hover {
+    box-shadow: 0px 0px 10px rgba(139, 9, 9, 0.349);
+    border-radius: 10px;
 }
 
 .plusBtn {

@@ -12,8 +12,19 @@ import CardOncart from "..//cardOncart/cardOncart.jsx"
                     <img className={styles.closeBtn} alt="closeBtn" src="../../../images/close.png" onClick={props.closeDrawer}/>
                 </h2>
                 <CardOncart/>
+                <div className={styles.totalBlock}>
+                    <ul>
+                        <li>
+                            <span>Итого: </span>
+                            <div className={styles.dottedLine}></div>
+                            <b>24000 руб</b>
+                        </li>
+                    </ul>
+                    <button>
+                        Оформить заказ <img alt="arrow" src="/images/arrow.svg"/>
+                    </button>
+                </div>
             </div>
-            
         </section>
     )
 }
