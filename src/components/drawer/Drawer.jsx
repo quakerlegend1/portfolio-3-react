@@ -6,14 +6,15 @@ import CardOncart from "..//cardOncart/cardOncart.jsx"
    
    
     return (
-        <div className={`${styles.overlay} ${props.isDrawerOpened ? styles.overlayVisible : ""}`} onClick={props.closeDrawer}>
+        <section className={`${styles.overlay} ${props.isDrawerOpened ? styles.overlayVisible : ""}`} onClick={props.closeDrawer}>
             <div className={styles.drawer} onClick={(event)=>event.stopPropagation()}>
                 <h2 style={{display:"flex",justifyContent:"space-between"}}>Корзина
                     <img className={styles.closeBtn} alt="closeBtn" src="../../../images/close.png" onClick={props.closeDrawer}/>
                 </h2>
+                <CardOncart/>
             </div>
-            <CardOncart/>
-        </div>
+            
+        </section>
     )
 }
 

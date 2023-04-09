@@ -1,0 +1,35 @@
+.container {
+    margin: 50px auto;
+    
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    
+}
+
+.card {
+    display: flex;
+    width: 325px;
+    border: 1px solid #F3F3F3;
+    border-radius: 20px;
+    padding: 30px 20px;
+    column-gap: 15px;
+    align-items: center;
+    
+}
+
+.textDescription {
+     /* word-break:break-all; */
+     
+     
+}
+
+.textDescription p {
+    margin-bottom: 8px;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-size: 15px;
+}

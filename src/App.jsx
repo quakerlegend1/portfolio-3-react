@@ -11,7 +11,7 @@ import { useState } from "react"
 
 
 
-const cardsArray = [
+export const cardsArray = [
   { id: 1,
     title: "Фреш Маффин",
     price: 189,
@@ -78,8 +78,11 @@ function App() {
   return (
     <>
     <div className={styles.wrapper}>
-      {/* {isDrawerVisible && <Drawer onClose={()=>{setIsDrawerVisible(false)}}/>} */}
-      <Drawer isDrawerOpened={isDrawerVisible} closeDrawer={()=>setIsDrawerVisible(false)}/>
+      <Drawer 
+        isDrawerOpened={isDrawerVisible}
+        closeDrawer={()=>setIsDrawerVisible(false)}
+
+      />
       <header className={styles.header}>
         <div className={styles.leftSection}>
           <img alt="header-logo" src={headerLogo}/>
