@@ -7,7 +7,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.650);
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: 1;
     visibility: hidden;
     opacity: 0;
@@ -35,6 +35,7 @@
     padding: 30px;
     transform: translateX(385px);
     transition: transform 0.3s ease-in-out;
+    /* overflow: auto; */
 }
 
 .closeBtn:hover {
@@ -44,10 +45,17 @@
     cursor: pointer;
 }
 
+.drawerCards {
+    overflow: auto;
+    margin: 30px auto;
+    border: 1px solid red;
+}
+
 .totalBlock {
     display: flex;
     flex-direction: column;
     row-gap: 30px;
+    
 }
 
 .totalBlock ul {

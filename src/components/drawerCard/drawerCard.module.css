@@ -1,16 +1,14 @@
-.container {
-    margin: 30px auto;
-    overflow-y: auto;
-}
 
 .cards {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
-    margin-right: 7px;
+    row-gap: 10px;
+    margin-right: 10px;
+    border: 1px dotted blue;
 }
 
 .card {
+    border: 10px solid rgb(73, 226, 43);
     display: flex;
     width: 325px;
     border: 1px solid #F3F3F3;
@@ -18,7 +16,6 @@
     padding: 30px 20px;
     column-gap: 15px;
     align-items: center;
-    
 }
 
 .textDescription {
