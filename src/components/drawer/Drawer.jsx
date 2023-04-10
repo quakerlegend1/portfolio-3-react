@@ -75,7 +75,9 @@ const cardsArray = [
                     <img className={styles.closeBtn} alt="closeBtn" src="../../../images/close.png" onClick={props.closeDrawer}/>
                 </h2>
                 <div className={styles.drawerCards}>
-                    {cardsArray.map((item)=>{return <DrawerCard key={item.id} title={item.title} price={item.price} imageUrl={item.imageUrl}/>})}
+                    <ul className={styles.Ulcards}>
+                        {cardsArray.map((item)=>{return <DrawerCard key={item.id} title={item.title} price={item.price} imageUrl={item.imageUrl}/>})}
+                    </ul>
                 </div>
                 
                 <div className={styles.totalBlock}>

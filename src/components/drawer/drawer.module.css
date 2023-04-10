@@ -46,9 +46,16 @@
 }
 
 .drawerCards {
-    overflow: auto;
     margin: 30px auto;
-    border: 1px solid red;
+    overflow-y: auto;
+}
+
+
+.Ulcards {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-right: 10px;
 }
 
 .totalBlock {
