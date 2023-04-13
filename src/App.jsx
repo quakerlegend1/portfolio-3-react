@@ -16,7 +16,7 @@ function App() {
   const [orderProducts, setorderProducts] = useState([])
 
   function addToOrder(product) {
-    setorderProducts((prev)=> { return prev.push(product)})
+    
     console.log(orderProducts)
   }
 
