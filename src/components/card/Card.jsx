@@ -5,9 +5,11 @@ import favourite from "/images/favourite.png"
 
 function Card(props) {
     const [isAdded, setIsAdded] = useState(false)
-    function OnClickPlus() {
+    
+    function onClickPlus() {
         setIsAdded(!isAdded)
     }
+
     return (
         <li className={styles.card}>
             <img alt="favourite" src={favourite} className={styles.favourite}/>
@@ -18,7 +20,9 @@ function Card(props) {
                     <span>Цена: </span>
                     <b>{props.price} руб.</b>
                 </div>
-                <button className={isAdded ? styles.tickMark : styles.plusBtn} onClick={OnClickPlus}/>
+                <button 
+                className={isAdded ? styles.tickMark : styles.plusBtn} 
+                onClick={()=>{onClickPlus();props.onAddToOrder(props.currentProduct)}}/>
             </div>
         </li>
     )
