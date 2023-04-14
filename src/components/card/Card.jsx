@@ -1,28 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./card.module.css";
 import favourite from "/images/favourite.png"
 
 
-function Card(props) {
+function Card({onDeleteFromOrder,currentProduct,onAddToOrder,imageUrl,title,price}) {
     const [isAdded, setIsAdded] = useState(false)
     
     function onClickPlus() {
+        
         setIsAdded(!isAdded)
+        if(isAdded === false) {onAddToOrder(currentProduct)}
+        else {onDeleteFromOrder(currentProduct)}
     }
+    
+    
 
     return (
         <li className={styles.card}>
             <img alt="favourite" src={favourite} className={styles.favourite}/>
-            <img alt="burger" src={props.imageUrl} />
-            <p style={{textAlign:"center"}}>{props.title}</p>
+            <img alt="burger" src={imageUrl} />
+            <p style={{textAlign:"center"}}>{title}</p>
             <div style={{display:"flex",justifyContent:"space-around",marginTop:"15px"}}>
                 <div className={styles.price}>
                     <span>Цена: </span>
-                    <b>{props.price} руб.</b>
+                    <b>{price} руб.</b>
                 </div>
                 <button 
                 className={isAdded ? styles.tickMark : styles.plusBtn} 
-                onClick={()=>{onClickPlus();props.onAddToOrder(props.currentProduct)}}/>
+                onClick={onClickPlus}/>
             </div>
         </li>
     )

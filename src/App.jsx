@@ -10,20 +10,27 @@ import headerUser from "/images/header-user.svg"
 import { useState } from "react"
 import cardsArray from "./data"
 
+
+
 function App() {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
   const [dataProducts, setdataProducts] = useState(cardsArray)
-  const [orderProducts, setorderProducts] = useState([])
-
-  function addToOrder(product) {
+  const [orderItems, setOrderItems] = useState([])
     
-    console.log(orderProducts)
+  function addToOrder(product) {
+    setOrderItems((prev)=>[...prev, product])
+  }
+
+  function deleteFromOrder(product) {
+  setOrderItems((prev)=>prev.filter(item => item !== product))
   }
 
   return (
     <>
     <div className={styles.wrapper}>
       <Drawer 
+        onDeleteFromOrder={deleteFromOrder}
+        cartItems={orderItems}
         isDrawerOpened={isDrawerVisible}
         closeDrawer={()=>setIsDrawerVisible(false)}
       />
@@ -55,12 +62,14 @@ function App() {
           <ul className={styles.cardsContainer}>
             {dataProducts.map((card)=>
             {return <Card 
+            onDeleteFromOrder={deleteFromOrder}
             onAddToOrder={addToOrder}
             key={card.id} 
             title={card.title} 
             price={card.price} 
             imageUrl={card.imageUrl}
             currentProduct={card}
+            
             />})}
           </ul>
         </section>
