@@ -59,6 +59,7 @@
 }
 
 .totalBlock {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     row-gap: 30px;
@@ -109,3 +110,15 @@
     transition: transform 0.15s ease-in-out;
 }
 
+.emptyCartWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100%;
+    gap: 10px;
+}
+
+.emptyCartWrapper span {
+    text-align: center;
+    line-height: 24px;
+}

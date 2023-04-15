@@ -7,15 +7,19 @@ import headerLogo from "/images/header-logo.svg"
 import headerCart from "/images/header-cart.svg"
 import headerFavourites from "/images/header-favouriotes.svg"
 import headerUser from "/images/header-user.svg"
-import { useState } from "react"
+import { createContext, useState } from "react"
 import cardsArray from "./data"
 
 
 
 function App() {
-  const [isDrawerVisible, setIsDrawerVisible] = useState(false)
+  const [isDrawerVisible, setIsDrawerVisible] = useState(false) 
   const [dataProducts, setdataProducts] = useState(cardsArray)
   const [orderItems, setOrderItems] = useState([])
+  const ShopContext = createContext(null);
+
+  let totalPrice = orderItems.reduce((sum,obj)=>sum+obj.price,0)
+  
     
   function addToOrder(product) {
     setOrderItems((prev)=>[...prev, product])
@@ -33,6 +37,7 @@ function App() {
         cartItems={orderItems}
         isDrawerOpened={isDrawerVisible}
         closeDrawer={()=>setIsDrawerVisible(false)}
+        totalPrice={totalPrice}
       />
       <header className={styles.header}>
         <div className={styles.leftSection}>
@@ -46,7 +51,7 @@ function App() {
         <div className={styles.rightSection}>
           <div className={styles.cartBtn} onClick={()=>setIsDrawerVisible(true)}>
             <img alt="header-cart" src={headerCart} width="18" height="17"/>
-            <b>1300 руб.</b>
+            <b>{totalPrice} руб.</b>
           </div>
           <img alt="header-favouriotes" src={headerFavourites} width="21" height="19"/>
           <img alt="header-user" src={headerUser} width="20" height="20" />
@@ -69,7 +74,6 @@ function App() {
             price={card.price} 
             imageUrl={card.imageUrl}
             currentProduct={card}
-            
             />})}
           </ul>
         </section>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./drawerCard.module.css";
 
 
-function DrawerCard({imageUrl,title,price,deleteCurrentProduct}) {
+function DrawerCard({imageUrl,title,price,deleteCurrentProduct,totalPrice}) {
 
     return (
                 <li className={styles.card}>
