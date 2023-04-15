@@ -41,7 +41,7 @@ import DrawerCard from "../drawerCard/DrawerCard.jsx";
                 <div className={styles.emptyCartWrapper}>
                     <img alt="emptyCart" width="120" height="120" src="/images/emptyCart.png"/>
                     <h3>Корзина пустая</h3>
-                    <span>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ</span>
+                    <span>Добавьте хотя бы один бургер 🍔, чтобы сделать заказ</span>
                 </div>
                 )}
 
