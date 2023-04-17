@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./card.module.css";
 import favourite from "/images/favourite.png"
 import favouriteClicked from "/images/favouriteClicked.png";
@@ -8,6 +8,8 @@ function Card({onDeleteFromOrder,currentProduct,onAddToOrder,imageUrl,title,pric
     const [isAdded, setIsAdded] = useState(false)
     const [isFavourite, setIsFavourite] = useState(false)
     
+    
+
     function onClickPlus() {
         setIsAdded(!isAdded)
         if(isAdded === false) {onAddToOrder(currentProduct)}
