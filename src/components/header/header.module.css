@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #EAEAEA;
+    padding: 45px;
+}
+
+.leftSection {
+    display: flex;
+    column-gap: 10px;
+}
+
+.leftSection p {
+    font-weight: 700;
+    font-size: 14px;
+    color: #9D9D9D;
+    padding-left: 2px;
+}
+
+.rightSection {
+    align-items: center;
+    display: flex;
+    column-gap: 20px;
+}
+
+.cartBtn {
+    display: flex;
+    column-gap: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(153, 135, 135, 0.349);
+    padding: 5px;
+}
+
+.cartBtn b {
+    font-weight: 900;
+    font-size: 18px;
+    color: #5C5C5C;
+    
+}
+
+.cartBtn:hover {
+    box-shadow: 0px 0px 10px rgba(15, 13, 13, 0.349);
+    transform: translateY(-1px);
+}
+

@@ -4,7 +4,7 @@ import favourite from "/images/favourite.png"
 import favouriteClicked from "/images/favouriteClicked.png";
 
 
-function Card({onDeleteFromOrder,currentProduct,onAddToOrder,imageUrl,title,price}) {
+function Card({onDeleteFromOrder,currentProduct,onAddToOrder,imageUrl,title,price,onAddToFavourites,onDeleteFromFavourites}) {
     const [isAdded, setIsAdded] = useState(false)
     const [isFavourite, setIsFavourite] = useState(false)
     
@@ -12,12 +12,14 @@ function Card({onDeleteFromOrder,currentProduct,onAddToOrder,imageUrl,title,pric
         setIsAdded(!isAdded)
         if(isAdded === false) {onAddToOrder(currentProduct)}
         else {onDeleteFromOrder(currentProduct)}
+        
     }
     
     function onClickFavourite() {
         setIsFavourite(!isFavourite)
+        if(isFavourite === false) {onAddToFavourites(currentProduct)}
+        else {onDeleteFromFavourites(currentProduct)}
     }
-
     return (
         <li className={styles.card}>
             <img 
@@ -27,12 +29,12 @@ function Card({onDeleteFromOrder,currentProduct,onAddToOrder,imageUrl,title,pric
             onClick={onClickFavourite}/>
             <img alt="burger" src={imageUrl} />
             <p style={{textAlign:"center"}}>{title}</p>
-            <div style={{display:"flex",justifyContent:"space-around",marginTop:"15px"}}>
+            <div style={{display:"flex",marginTop:"15px",padding:" 0 20px"}}>
                 <div className={styles.price}>
                     <span>Цена: </span>
                     <b>{price} руб.</b>
                 </div>
-                <button 
+                 <button 
                 className={isAdded ? styles.tickMark : styles.plusBtn} 
                 onClick={onClickPlus}/>
             </div>

@@ -1,14 +1,18 @@
+import {Link, Route, Routes} from "react-router-dom";
+import styles from "./app.module.css";
 
-import styles from "./app.module.css"
-import Carousel from "./components/carousel/Carousel"
-import Card from "./components/card/Card" 
-import Drawer from "./components/drawer/Drawer"
-import headerLogo from "/images/header-logo.svg"
-import headerCart from "/images/header-cart.svg"
-import headerFavourites from "/images/header-favouriotes.svg"
-import headerUser from "/images/header-user.svg"
-import { createContext, useState } from "react"
-import cardsArray from "./data"
+import Carousel from "./components/carousel/Carousel";
+import Drawer from "./components/drawer/Drawer";
+import Home from "./pages/home/Home";
+import Header from "./components/header/Header";
+import Favourite from "./pages/favourite/Favourite";
+import ErrorPage from "./pages/Error-page";
+
+import { useState } from "react";
+import cardsArray from "./data";
+
+
+
 
 
 
@@ -16,7 +20,8 @@ function App() {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false) 
   const [dataProducts, setdataProducts] = useState(cardsArray)
   const [orderItems, setOrderItems] = useState([])
-  const ShopContext = createContext(null);
+  const [favouriteItems, setFavouriteItems] = useState([])
+  const [changeLogo, setChangeLogo] = useState(true)
 
   let totalPrice = orderItems.reduce((sum,obj)=>sum+obj.price,0)
   
@@ -29,6 +34,14 @@ function App() {
   setOrderItems((prev)=>prev.filter(item => item !== product))
   }
 
+  function addToFavourites(product) {
+    setFavouriteItems((prev)=>[...prev, product])
+  }
+
+  function deleteFromFavourites(product) {
+    setFavouriteItems((prev)=>prev.filter(item => item !== product))
+    }
+
   return (
     <>
     <div className={styles.wrapper}>
@@ -39,44 +52,34 @@ function App() {
         closeDrawer={()=>setIsDrawerVisible(false)}
         totalPrice={totalPrice}
       />
-      <header className={styles.header}>
-        <div className={styles.leftSection}>
-          <img alt="header-logo" src={headerLogo}/>
-          <div>
-            <h2>TASTY-BURGERS</h2>
-            <p>Доставка вкусного фастфуда</p>
-          </div>
-          
-        </div>
-        <div className={styles.rightSection}>
-          <div className={styles.cartBtn} onClick={()=>setIsDrawerVisible(true)}>
-            <img alt="header-cart" src={headerCart} width="18" height="17"/>
-            <b>{totalPrice} руб.</b>
-          </div>
-          <img alt="header-favouriotes" src={headerFavourites} width="21" height="19"/>
-          <img alt="header-user" src={headerUser} width="20" height="20" />
-        </div>
-      </header>
+
+      <Header 
+      setChangeLogo={setChangeLogo}
+      totalPrice={totalPrice}
+      openDrawer={setIsDrawerVisible}
+      />
+  
       <main className={styles.main}>
-      <Carousel/>
-        <div className={styles.search}>
-          <h2>Все товары</h2>
-          <input type="text" placeholder="Поиск..."/>
-        </div>
-        <section>
-          <ul className={styles.cardsContainer}>
-            {dataProducts.map((card)=>
-            {return <Card 
-            onDeleteFromOrder={deleteFromOrder}
-            onAddToOrder={addToOrder}
-            key={card.id} 
-            title={card.title} 
-            price={card.price} 
-            imageUrl={card.imageUrl}
-            currentProduct={card}
-            />})}
-          </ul>
-        </section>
+      <Carousel changeLogo={changeLogo}/>
+
+      <Routes>
+        <Route path="" element={
+          <Home
+          dataProducts={dataProducts}
+          deleteFromOrder={deleteFromOrder}
+          addToOrder={addToOrder}
+          addToFavourites={addToFavourites}
+          deleteFromFavourites={deleteFromFavourites}
+          />}
+        />
+        <Route path="favourites" element={
+          <Favourite
+          favouriteItems={favouriteItems}
+          />
+        }
+        />
+        <Route path="*" element={<ErrorPage/>}/>
+      </Routes>
       </main>
     </div>
     </>

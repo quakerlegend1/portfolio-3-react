@@ -5,6 +5,7 @@
     box-shadow: 0 10px 20px #00000010;
     border: 1px solid #F3F3F3;
     transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .card:hover {
@@ -58,6 +59,7 @@
 }
 
 .price {
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
 }
